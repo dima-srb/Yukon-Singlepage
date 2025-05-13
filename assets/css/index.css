@@ -1,8 +1,4 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
+:root {
     /* Color pallette */
     --lavender: #D7DAE5;
     --brown: #9C6615;
@@ -12,6 +8,13 @@
     --black: #000000;
     --white: #ffffff;
     --cloud: #edece8;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html{
@@ -146,7 +149,7 @@ nav a:hover{
     font-weight: 100;
 }
 
-/* ---------- CSS for optional button to direct user to another page ----------  */
+/* ---------- CSS for optional card button to direct user to another page ----------  */
 
 /* .card-button{
     margin-top: 6.4rem;
@@ -185,7 +188,7 @@ nav a:hover{
 
 .title-only hr{
     width: 80%;
-    border: 1.3px solid black;
+    border: 1.3px solid var(--black);
 }
 
 /* ---------- Reviews ---------- */
@@ -218,7 +221,7 @@ nav a:hover{
     width: 80%;
     height: 1.3px;             
     border: none;            
-    background-color: black;
+    background-color: var(--black);
     margin: 1rem auto;
 }
 
@@ -270,7 +273,7 @@ nav a:hover{
 
 .title-only hr{
     width: 80%;
-    border: 1.3px solid black;
+    border: 1.3px solid var(--black);
 }
 
 /* ---------- Awards ---------- */
@@ -302,7 +305,7 @@ nav a:hover{
     width: 80%;
     height: 1.3px;
     border: none;
-    background-color: black;
+    background-color: var(--black);
     margin: 1rem auto;
 }
 
@@ -336,6 +339,8 @@ nav a:hover{
 }
 
 /* ---------- Contact Section ---------- */
+/* The entire section containing both the GitHub profile link
+and the contact form for ordering a project */
 
 .contact-card{
     display: flex;
@@ -353,13 +358,20 @@ nav a:hover{
     align-items: center;
 }
 
-.links a{
+.github{
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
 }
 
-.links p{
+.github img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+}
+
+.github p{
     width: 35rem;
     margin-top: 2rem;
     margin-bottom: 6rem;
@@ -369,20 +381,6 @@ nav a:hover{
     font-weight: 100;
     font-size: 2rem;
     letter-spacing: .5;
-}
-
-a{
-    text-decoration: none;
-    color: var(--black);
-    font-size: 3rem;
-
-    padding: 2rem;
-
-    transition: background-color .3s;
-}
-
-a:hover{
-    background-color: var(--mikado);
 }
 
 /* ---------- Contact Form ---------- */
@@ -584,6 +582,23 @@ footer a:hover{
         width: 90%;
     }
 
+    .contact-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        padding: 2rem;
+    }
+
+    .links p,
+    form {
+        width: 90%;
+    }
+
+    .links {
+            flex-wrap: wrap;
+            justify-content: center;
+    }
+
     footer h3 {
         font-size: 2.2rem;
         text-align: center;
@@ -592,11 +607,6 @@ footer a:hover{
     footer p {
         font-size: 1.2rem;
         text-align: center;
-    }
-
-    .links {
-        flex-wrap: wrap;
-        justify-content: center;
     }
 
     footer a {
